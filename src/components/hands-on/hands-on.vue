@@ -1,9 +1,5 @@
 <script setup lang="ts">
 import SceneDisplay from '@/components/sceneDisplay/scene-display.vue';
-
-defineProps<{
-  msg: string
-}>()
 </script>
 
 <template>

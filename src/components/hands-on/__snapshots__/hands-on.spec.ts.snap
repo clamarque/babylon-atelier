@@ -1,0 +1,10 @@
+// Vitest Snapshot v1
+
+exports[`HandsOn > should render the hands on component 1`] = `
+"<div class=\\"hands-on\\">
+  <h1 class=\\"green\\">Welcome!</h1>
+  <div class=\\"scene-display-container\\">
+    <scene-display-stub></scene-display-stub>
+  </div>
+</div>"
+`;
