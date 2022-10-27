@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { createScene } from "@/components/sceneDisplay/scene-display.service";
+import { createScene } from "@/components/scene-display/scene-display.service";
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SceneDisplay from '@/components/sceneDisplay/scene-display.vue';
+import SceneDisplay from '@/components/scene-display/scene-display.vue';
 </script>
 
 <template>

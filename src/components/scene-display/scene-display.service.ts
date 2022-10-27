@@ -15,6 +15,7 @@ const initCamera = (canvas: HTMLCanvasElement, scene: Scene) => {
 };
 
 const initLight = (scene: Scene) => {
+
   const light = new HemisphericLight(
     "light",
     new Vector3(0, 1, 0),
