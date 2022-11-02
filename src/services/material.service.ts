@@ -1,37 +1,53 @@
-import { PBRMaterial, Texture } from '@babylonjs/core';
+import { AssetsManager, PBRMaterial, TextureAssetTask } from "@babylonjs/core";
 
-export const createGrassMaterial = () => {
+export const createGrassMaterial = (assetsManager: AssetsManager) => {
   const grassMaterial = new PBRMaterial("grass");
-  const albedoTexture = new Texture(
-    "src/assets/textures/ground_grass.png"
-  );
-  albedoTexture.uScale = 10;
-  albedoTexture.vScale = 10;
-  grassMaterial.albedoTexture = albedoTexture;
-
-  const bumpTexture = new Texture(
-    "src/assets/textures/ground_grass_NRM.png"
-  );
-  bumpTexture.uScale = 10;
-  bumpTexture.vScale = 10;
-  grassMaterial.bumpTexture = bumpTexture;
-
   grassMaterial.roughness = 1;
+
+  // Ancien chargement des textures:
+  /*
+    const XXXTexture = new Texture("uri/vers/ma/ressource.png");
+    XXXTexture.uScale = 10;
+    XXXTexture.vScale = 10;
+    grassMaterial.XXXTexture = XXXTexture;
+   */
+
+  // TODO: declarer les taches de chargement dans l'assetsManager
+  // sachant que les resources a charger sont les suivantes:
+  //  - albedoTexture: src/assets/textures/ground_grass.png
+  //  - bumpTexture: src/assets/textures/ground_grass_NRM.png
+  /*
+  assetsManager.addTextureTask(
+    "nom_de_ma_task",
+    "uri/vers/ma/ressource.png"
+  ).onSuccess = (task: TextureAssetTask) => {
+    const { texture } = task;
+    texture.uScale = 10;
+    texture.vScale = 10;
+    grassMaterial.XXXTexture = texture;
+  };
+ */
   return grassMaterial;
 };
 
-export const createStoneMaterial = () => {
+export const createStoneMaterial = (assetsManager: AssetsManager) => {
   const stoneMaterial = new PBRMaterial("stone");
-  const albedoTexture = new Texture(
-    "src/assets/textures/stone-grey.png"
-  );
-  stoneMaterial.albedoTexture = albedoTexture;
-
-  const bumpTexture = new Texture(
-    "src/assets/textures/stone-grey_NRM.png"
-  );
-  stoneMaterial.bumpTexture = bumpTexture;
-
   stoneMaterial.roughness = 0.5;
+
+  // Ancien chargement des textures:
+  /*
+    stoneMaterial.XXXTexture = new Texture("uri/vers/ma/ressource.png");
+   */
+
+  // TODO: declarer les taches de chargement dans l'assetsManager
+  // sachant que les resources a charger sont les suivantes:
+  //  - albedoTexture: src/assets/textures/stone-grey.png
+  //  - bumpTexture: src/assets/textures/stone-grey_NRM.png
+  /*
+  assetsManager.addTextureTask(
+    "nom_de_ma_task",
+    "uri/vers/ma/ressource.png"
+  ).onSuccess = (task: TextureAssetTask) => stoneMaterial.XXXTexture = task.texture;
+ */
   return stoneMaterial;
 };
