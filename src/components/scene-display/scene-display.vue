@@ -1,6 +1,6 @@
 <template>
   <div class="scene-display">
-    <canvas ref="bjsCanvas" width="1200" height="600"></canvas>
+    <canvas ref="bjsCanvas" width="1600" height="750"></canvas>
   </div>
 </template>
 
